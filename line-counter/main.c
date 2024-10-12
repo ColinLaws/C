@@ -3,6 +3,8 @@
 #define IN  1   /* mode when the last char was a space */
 #define OUT 0   /* mode when we the last char was not a space */
 
+/* just a quick note, this program was a line counter until
+    I continued on with exercise 1-9 and overwrote the code*/
 int main()
 {
     int c, state;
