@@ -3,6 +3,7 @@
 #define IN  1
 #define OUT 0
 
+/* counts lines, characters, and word totals until EOF received */
 int main()
 {
     int c, nl, nw, nc, state;
