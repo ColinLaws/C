@@ -41,7 +41,7 @@ int main()
 
             ++acc;              /* accumulate the char count */
 
-            if (acc > INTERVAL)    /* when the char count spills over the range size */
+            if (acc > INTERVAL) /* when the char count spills over the range size */
             {
                 ++i;            /* increment the bar index */
                 acc = 0;        /* reset the char count accumulator */
