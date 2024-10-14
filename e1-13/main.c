@@ -4,7 +4,7 @@
 #define OUT      0
 #define INTERVAL 4  /* represents the size of intervals for the histogram */
 #define BARS     16 /* the total number of bars in the histogram, 
-                        max word count is INTERVAL * RANGE */
+                        max word count is INTERVAL * BARS */
 
 /* generates a histogram of the lengths of words in the input */
 int main()
@@ -41,7 +41,7 @@ int main()
 
             ++acc;              /* accumulate the char count */
 
-            if (acc > RANGE)    /* when the char count spills over the range size */
+            if (acc > INTERVAL)    /* when the char count spills over the range size */
             {
                 ++i;            /* increment the bar index */
                 acc = 0;        /* reset the char count accumulator */
@@ -49,12 +49,25 @@ int main()
         }
     }
 
-    // for (i = 1; i < BARS + 1; ++i)
-    // {
-           /* I'm stuck on calculating the min and max numbers of each range to print the bars.
-              The count for each element of the histogram data is correct. 
-              I just need to print the data now. 
-            */
-    //     printf("%d:%d", ((i * INTERVAL) - (INTERVAL + 1)), );
-    // }
+    int min, max, j = 0;
+    for (i = 0; i < BARS; ++i)
+    {
+        if (i == 0)
+        {
+            min = 1;
+            max = INTERVAL;
+        }
+        else
+        {
+            min = i * (INTERVAL + 1);
+            max = min + INTERVAL;
+        }
+
+        printf("%d-%d \t|", min, max);          /* prints the range for the current bar */
+
+        for (j = 0; j < histogramData[i]; ++j)
+            putchar('#');                       /* draw the bar using # per each occurrence */
+
+        putchar('\n');
+    }
 }
