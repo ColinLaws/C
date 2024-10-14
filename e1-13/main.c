@@ -10,7 +10,6 @@
 int main()
 {
     int c, acc, i, state;
-    float calc;
 
     /* each index stores char count of words in multiples of 4
         0 = 1-4, 1 = 5-9, 2 = 10-14, 3 = 15-19, up to 16 = 60-64  */
